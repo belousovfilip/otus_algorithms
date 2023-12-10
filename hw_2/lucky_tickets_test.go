@@ -13,7 +13,7 @@ import (
 )
 
 func TestLuckyTickets(t *testing.T) {
-	data, err := getData(9)
+	data, err := getData(10)
 	require.NoError(t, err)
 	for _, v := range data {
 		require.Equal(t, v.out, LuckyTickets(v.in))
@@ -58,8 +58,14 @@ func readIntFromFile(p string) (int64, error) {
 
 }
 
-func getData(n int) ([]struct{ in, out int64 }, error) {
-	var data []struct{ in, out int64 }
+func getData(n int) ([]struct {
+	in  uint16
+	out int64
+}, error) {
+	var data []struct {
+		in  uint16
+		out int64
+	}
 	for i := 0; i <= n; i++ {
 		in, err := readIntFromFile(fmt.Sprintf("./test/test.%d.in", i))
 		if err != nil {
@@ -69,7 +75,10 @@ func getData(n int) ([]struct{ in, out int64 }, error) {
 		if err != nil {
 			return nil, err
 		}
-		data = append(data, struct{ in, out int64 }{in: in, out: out})
+		data = append(data, struct {
+			in  uint16
+			out int64
+		}{in: uint16(in), out: out})
 	}
 	return data, nil
 }
