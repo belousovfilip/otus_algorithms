@@ -3,7 +3,7 @@ package fibonacci
 import (
 	"fmt"
 	"github.com/stretchr/testify/require"
-	"otus_algo/helpers"
+	"otus_algo/internal"
 	"testing"
 )
 
@@ -45,11 +45,11 @@ func TestBine(t *testing.T) {
 func getItems(n int) ([]item, error) {
 	var data []item
 	for i := 0; i <= n; i++ {
-		in, err := helpers.ReadInt64FromFile(fmt.Sprintf("./test/test.%d.in", i))
+		in, err := internal.ReadInt64FromFile(fmt.Sprintf("./test/test.%d.in", i))
 		if err != nil {
 			return nil, err
 		}
-		out, err := helpers.ReadInt64FromFile(fmt.Sprintf("./test/test.%d.out", i))
+		out, err := internal.ReadInt64FromFile(fmt.Sprintf("./test/test.%d.out", i))
 		if err != nil {
 			return nil, err
 		}
