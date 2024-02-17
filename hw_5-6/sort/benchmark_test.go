@@ -11,7 +11,9 @@ func Sort(l []int) {
 	//Insert(l)
 	//InsertBinary(l)
 	//InsertShift(l)
-	Shell(l)
+	//Shell(l)
+	//Selection(l)
+	Heap(l)
 }
 
 var l = []int{
