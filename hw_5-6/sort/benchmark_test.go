@@ -6,14 +6,16 @@ import (
 	"testing"
 )
 
-func Sort(l []int) {
-	//Bubble(l)
-	//Insert(l)
-	//InsertBinary(l)
-	//InsertShift(l)
-	//Shell(l)
-	//Selection(l)
-	Heap(l)
+func Sort(arr []int) {
+	//Bubble(arr)
+	//Insert(arr)
+	//InsertBinary(arr)
+	//InsertShift(arr)
+	//Shell(arr)
+	//Selection(arr)
+	//Heap(arr)
+	Quick(arr)
+	//Merge(arr)
 }
 
 var l = []int{
