@@ -4,11 +4,11 @@ import (
 	"math/rand"
 )
 
-type ListInt struct {
+type ArrInt struct {
 	count int
 }
 
-func (l *ListInt) Sorted() []int {
+func (l *ArrInt) Sorted() []int {
 	list := make([]int, l.count)
 	for i := 0; i < l.count; i++ {
 		list[i] = i
@@ -16,14 +16,14 @@ func (l *ListInt) Sorted() []int {
 	return list
 }
 
-func (l *ListInt) SortedWithUnsortedItemInMiddle() []int {
+func (l *ArrInt) SortedWithUnsortedItemInMiddle() []int {
 
 	list := l.Sorted()
 	list[l.count/2] = l.count + 1
 	return list
 }
 
-func (l *ListInt) Unsorted() []int {
+func (l *ArrInt) Unsorted() []int {
 
 	list := make([]int, l.count)
 	for i := 0; i < l.count; i++ {
@@ -32,7 +32,7 @@ func (l *ListInt) Unsorted() []int {
 	return list
 }
 
-func (l *ListInt) Revers() []int {
+func (l *ArrInt) Revers() []int {
 	list := make([]int, l.count)
 	for i := 0; i < l.count; i++ {
 		list[i] = l.count - i - 1
@@ -41,6 +41,6 @@ func (l *ListInt) Revers() []int {
 	return list
 }
 
-func InitListInt(count int) *ListInt {
-	return &ListInt{count: count}
+func InitListInt(count int) *ArrInt {
+	return &ArrInt{count: count}
 }
