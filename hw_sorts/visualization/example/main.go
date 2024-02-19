@@ -2,7 +2,7 @@ package main
 
 import (
 	tm "github.com/buger/goterm"
-	"otus_algo/hw_5-6/visualization"
+	"otus_algo/hw_sorts/visualization"
 )
 
 func main() {
