@@ -14,8 +14,11 @@ func Sort(arr []int) {
 	//Shell(arr)
 	//Selection(arr)
 	//Heap(arr)
-	Quick(arr)
+	//Quick(arr)
 	//Merge(arr)
+	//Bucket(arr)
+	//Counting(arr)
+	Radix(arr)
 }
 
 var l = []int{
@@ -24,20 +27,6 @@ var l = []int{
 	10_000,
 	100_000,
 	1_000_000,
-}
-
-func BenchmarkOnline(b *testing.B) {
-	for _, v := range l {
-		b.Run(strconv.Itoa(v), func(b *testing.B) {
-			b.StopTimer()
-			list := factory.InitListInt(v).Sorted()
-			b.StartTimer()
-			for i := 0; i < b.N; i++ {
-				list = append(list, 0)
-				Sort(list)
-			}
-		})
-	}
 }
 
 func BenchmarkUnsorted(b *testing.B) {
